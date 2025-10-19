@@ -5,110 +5,141 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>徐嘉辉 — 机械工程师</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header glass">
     <div class="container header-inner">
       <div class="brand">徐嘉辉<span class="role">机械工程师</span></div>
       <nav class="nav" id="mainNav">
         <a href="#home" class="nav-link">首页</a>
-        <a href="#about" class="nav-link">教育与荣誉</a>
-        <a href="#projects" class="nav-link">项目经历</a>
-        <a href="#experience" class="nav-link">校园与实习经历</a>
-        <a href="#skills" class="nav-link">技能与证书</a>
-        <a href="#contact" class="nav-link">联系我</a>
+        <a href="#about" class="nav-link">关于我</a>
+        <a href="#skills" class="nav-link">技能矩阵</a>
+        <a href="#honors" class="nav-link">荣誉展示</a>
+        <a href="#stats" class="nav-link">数据统计</a>
+        <a href="#projects" class="nav-link">项目案例</a>
+        <a href="#experience" class="nav-link">实践经历</a>
+        <a href="#contact" class="nav-link">联系方式</a>
       </nav>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="切换主题">🌗</button>
+        <a class="btn resume" href="#">下载简历</a>
+        <button class="burger" id="burger">☰</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-left">
-        <h1>徐嘉辉</h1>
-        <h2>智能制造 · 结构设计 · 机器人运维</h2>
-        <p>华侨大学 · 智能制造工程本科生 | GPA 3.95 | 全国二等奖获得者 | 班级班长</p>
-        <a href="#projects" class="btn primary">查看项目</a>
-      </div>
-      <div class="hero-right">
-        <img src="avatar.jpg" alt="徐嘉辉" class="avatar">
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <h2>教育背景与荣誉</h2>
-      <div class="card">
-        <p><strong>华侨大学</strong> — 智能制造工程（2022.09 - 2026.06）</p>
-        <ul>
-          <li>GPA 3.95 / 专业前15%</li>
-          <li>国家励志奖学金 / 学院奖学金</li>
-          <li>国家二等奖×2、省级二等奖×1、校级奖×3</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects" class="section alt">
-      <h2>项目经历</h2>
-      <div class="projects-grid">
-        <div class="project" data-detail="中国大学生方程式汽车大赛 - 负责电控系统设计与优化，开发半自动离合换挡与底盘EBD系统，实现赛车拨片换挡。">
-          <h3>方程式赛车 · 全国二等奖</h3>
-          <p>电控系统设计 | 半自动离合换挡 | 底盘EBD技术</p>
+    <section id="home" class="hero parallax-bg">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="fade-in">徐嘉辉<br><span>智能制造 · 结构设计 · 机器人运维</span></h1>
+          <p class="lead slide-up">机械结构、工业机器人、轻量化优化，从方案到落地。具备丰富的项目管理与实践经验。</p>
+          <div class="hero-cta fade-in-delay">
+            <a href="#projects" class="btn primary">查看项目案例</a>
+            <a href="#contact" class="btn outline">联系我</a>
+          </div>
         </div>
-        <div class="project" data-detail="开发全自动鱼洗机系统，通过视觉识别实现参数自适应匹配，完成不同鱼类的自动初加工。">
-          <h3>全自动鱼洗机</h3>
-          <p>视觉识别 · 自适应控制 · 参数匹配</p>
-        </div>
-        <div class="project" data-detail="基于Altair Inspire进行拓扑优化，结合AI Studio建模，实现轻量化与预测分析。">
-          <h3>轻量化设计与AI建模</h3>
-          <p>拓扑优化 | Inspire | 逻辑回归 / SVM</p>
+        <div class="hero-right zoom-in">
+          <div class="avatar-shell">
+            <div class="avatar-card">
+              <img src="images/photo.jpg" alt="徐嘉辉" class="avatar-photo">
+              <div class="avatar-meta">
+                <div class="name">徐嘉辉</div>
+                <div class="meta">华侨大学 · 智能制造工程</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <h2>校园与实习经历</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h4>班级班长 · 华侨大学</h4>
-          <p>2024.06 - 2025.06</p>
-          <p>统筹班务、策划活动、引导同学参与科创比赛，任期内班级获国家级奖项8人次。</p>
-        </div>
-        <div class="timeline-item">
-          <h4>工业机器人实习生 · 福建先进制造技术研究院</h4>
-          <p>2025.08 - 2025.09</p>
-          <p>使用ABB RobotStudio进行仿真编程与调试，完成码垛与画图任务。</p>
+    <section id="stats" class="section stats-section gradient-divider">
+      <div class="container">
+        <h2 class="section-title fade-in">数据统计</h2>
+        <div class="stats-grid fade-up">
+          <div class="stat-card">
+            <div class="stat-number" data-target="15">0</div>
+            <p>完成项目数量</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="8">0</div>
+            <p>获得奖项</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="3.95">0</div>
+            <p>平均绩点（GPA）</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="4">0</div>
+            <p>团队领导经历</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section alt">
-      <h2>技能与证书</h2>
-      <div class="skills-grid">
-        <div class="card"><strong>机械设计：</strong>AutoCAD、UG、Creo、Altair Inspire</div>
-        <div class="card"><strong>机器人与控制：</strong>ABB/KUKA、PLC、RobotStudio</div>
-        <div class="card"><strong>软件技能：</strong>Matlab、EPLAN、AnyLogic、Keil</div>
-        <div class="card"><strong>证书：</strong>工业机器人系统运维员（三级）</div>
+    <section id="honors" class="section gradient-divider">
+      <div class="container">
+        <h2 class="section-title fade-in">荣誉展示</h2>
+        <div class="honor-badges fade-in">
+          <div class="badge"><span>🥇</span> 全国大学生方程式汽车大赛二等奖</div>
+          <div class="badge"><span>🏆</span> 中国工程实践与创新能力大赛二等奖</div>
+          <div class="badge"><span>🎖️</span> 省级创新设计一等奖</div>
+          <div class="badge"><span>💡</span> 国家励志奖学金</div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>联系方式</h2>
-      <div class="card">
-        <p>电话：17268321180</p>
-        <p>邮箱：2391370527@qq.com</p>
-        <p>意向城市：福建福州 / 厦门</p>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">项目案例</h2>
+        <div class="projects-grid">
+          <article class="project pop-card fade-up" data-detail="负责电控系统设计与优化，开发半自动离合换挡系统，实现拨片换挡功能。">
+            <img src="images/project1.jpg" alt="方程式赛车" class="project-img">
+            <div class="project-info">
+              <h3>方程式赛车</h3>
+              <p>全国二等奖 · 电控系统设计与优化</p>
+            </div>
+          </article>
+          <article class="project pop-card fade-up" data-detail="开发全自动鱼洗机系统，通过视觉识别和参数匹配算法实现智能清洗。">
+            <img src="images/project2.jpg" alt="全自动鱼洗机" class="project-img">
+            <div class="project-info">
+              <h3>全自动鱼洗机</h3>
+              <p>智能识别 · 参数自适应 · 自主控制</p>
+            </div>
+          </article>
+          <article class="project pop-card fade-up" data-detail="基于Altair Inspire的拓扑优化与AI Studio算法建模，实现轻量化预测。">
+            <img src="images/project3.jpg" alt="轻量化与AI建模" class="project-img">
+            <div class="project-info">
+              <h3>轻量化与AI建模</h3>
+              <p>拓扑优化 · AI预测模型</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">© 2026 徐嘉辉 — 基于 HTML / CSS / JS 构建</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2026 徐嘉辉</div>
+        <div class="sm">机械工程师 · 智能制造 · HTML/CSS/JS</div>
+      </div>
+    </div>
+  </footer>
 
-  <div id="projectModal" class="modal hidden">
+  <div id="modal" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
+      <span class="close-btn">×</span>
       <h3 id="modalTitle"></h3>
       <p id="modalDetail"></p>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
