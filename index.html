@@ -1,144 +1,84 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>徐嘉辉 — 机械工程师</title>
+  <title>Interactive Engineering Space</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header glass">
-    <div class="container header-inner">
-      <div class="brand">徐嘉辉<span class="role">机械工程师</span></div>
-      <nav class="nav" id="mainNav">
-        <a href="#home" class="nav-link">首页</a>
-        <a href="#about" class="nav-link">关于我</a>
-        <a href="#skills" class="nav-link">技能矩阵</a>
-        <a href="#honors" class="nav-link">荣誉展示</a>
-        <a href="#stats" class="nav-link">数据统计</a>
-        <a href="#projects" class="nav-link">项目案例</a>
-        <a href="#experience" class="nav-link">实践经历</a>
-        <a href="#contact" class="nav-link">联系方式</a>
-      </nav>
-      <div class="header-actions">
-        <button id="themeToggle" aria-label="切换主题">🌗</button>
-        <a class="btn resume" href="#">下载简历</a>
-        <button class="burger" id="burger">☰</button>
-      </div>
-    </div>
+  <!-- Particle canvas -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+  <!-- Top bar (minimal, no name/title per request) -->
+  <header class="topbar">
+    <nav class="nav container">
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#stats">Stats</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero parallax-bg">
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1 class="fade-in">徐嘉辉<br><span>智能制造 · 结构设计 · 机器人运维</span></h1>
-          <p class="lead slide-up">机械结构、工业机器人、轻量化优化，从方案到落地。具备丰富的项目管理与实践经验。</p>
-          <div class="hero-cta fade-in-delay">
-            <a href="#projects" class="btn primary">查看项目案例</a>
-            <a href="#contact" class="btn outline">联系我</a>
-          </div>
+  <main class="container main-stage">
+    <section class="hero neon-hero">
+      <div class="hero-left">
+        <h1 id="mainTitle" class="neon-title">Welcome to My Interactive Engineering Space</h1>
+        <div class="typing" id="typing"></div>
+        <p class="sub">Design · Simulation · AI · Robotics</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn neon">Explore Projects</a>
+          <a href="#contact" class="btn outline">Get in Touch</a>
         </div>
-        <div class="hero-right zoom-in">
-          <div class="avatar-shell">
-            <div class="avatar-card">
-              <img src="images/photo.jpg" alt="徐嘉辉" class="avatar-photo">
-              <div class="avatar-meta">
-                <div class="name">徐嘉辉</div>
-                <div class="meta">华侨大学 · 智能制造工程</div>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar-glow">
+          <img src="./images/photo.jpg" alt="avatar" class="avatar" onerror="this.style.opacity=0.6;this.style.background='#222'">
+          <div class="halo"></div>
         </div>
       </div>
     </section>
 
-    <section id="stats" class="section stats-section gradient-divider">
-      <div class="container">
-        <h2 class="section-title fade-in">数据统计</h2>
-        <div class="stats-grid fade-up">
-          <div class="stat-card">
-            <div class="stat-number" data-target="15">0</div>
-            <p>完成项目数量</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="8">0</div>
-            <p>获得奖项</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="3.95">0</div>
-            <p>平均绩点（GPA）</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="4">0</div>
-            <p>团队领导经历</p>
-          </div>
-        </div>
+    <section id="stats" class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number" data-target="15">0</div><p>Projects</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="8">0</div><p>Awards</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="3.95">0</div><p>GPA</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="4">0</div><p>Team Leads</p></div>
       </div>
     </section>
 
-    <section id="honors" class="section gradient-divider">
-      <div class="container">
-        <h2 class="section-title fade-in">荣誉展示</h2>
-        <div class="honor-badges fade-in">
-          <div class="badge"><span>🥇</span> 全国大学生方程式汽车大赛二等奖</div>
-          <div class="badge"><span>🏆</span> 中国工程实践与创新能力大赛二等奖</div>
-          <div class="badge"><span>🎖️</span> 省级创新设计一等奖</div>
-          <div class="badge"><span>💡</span> 国家励志奖学金</div>
-        </div>
+    <section id="projects" class="projects-section">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="project" data-detail="Responsible for ECU/electrical system and paddle-shift design.">
+          <img src="./images/project1.jpg" alt="project1" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
+          <div class="project-info"><h3>Formula Racing</h3><p>ECU · paddle-shift · Controls</p></div>
+        </article>
+        <article class="project" data-detail="Automatic fish cleaning system with vision control.">
+          <img src="./images/project2.jpg" alt="project2" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
+          <div class="project-info"><h3>Auto Fish Cleaner</h3><p>Vision · Adaptive control</p></div>
+        </article>
+        <article class="project" data-detail="Topology optimization + AI modeling with Altair & AI Studio.">
+          <img src="./images/project3.jpg" alt="project3" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
+          <div class="project-info"><h3>Lightweight & AI</h3><p>Topology optimization · Predictive models</p></div>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section-title fade-in">项目案例</h2>
-        <div class="projects-grid">
-          <article class="project pop-card fade-up" data-detail="负责电控系统设计与优化，开发半自动离合换挡系统，实现拨片换挡功能。">
-            <img src="images/project1.jpg" alt="方程式赛车" class="project-img">
-            <div class="project-info">
-              <h3>方程式赛车</h3>
-              <p>全国二等奖 · 电控系统设计与优化</p>
-            </div>
-          </article>
-          <article class="project pop-card fade-up" data-detail="开发全自动鱼洗机系统，通过视觉识别和参数匹配算法实现智能清洗。">
-            <img src="images/project2.jpg" alt="全自动鱼洗机" class="project-img">
-            <div class="project-info">
-              <h3>全自动鱼洗机</h3>
-              <p>智能识别 · 参数自适应 · 自主控制</p>
-            </div>
-          </article>
-          <article class="project pop-card fade-up" data-detail="基于Altair Inspire的拓扑优化与AI Studio算法建模，实现轻量化预测。">
-            <img src="images/project3.jpg" alt="轻量化与AI建模" class="project-img">
-            <div class="project-info">
-              <h3>轻量化与AI建模</h3>
-              <p>拓扑优化 · AI预测模型</p>
-            </div>
-          </article>
-        </div>
-      </div>
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Contact</h2>
+      <form id="contactForm" class="neon-form" action="#" onsubmit="event.preventDefault();showToast('Message sent (demo)');this.reset();">
+        <div class="form-row"><input name="name" placeholder="Your name" required></div>
+        <div class="form-row"><input name="email" type="email" placeholder="your@email.com" required></div>
+        <div class="form-row"><textarea name="message" rows="4" placeholder="Message"></textarea></div>
+        <div class="form-row"><button class="btn neon" type="submit">Send Message</button></div>
+      </form>
     </section>
-
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>© 2026 徐嘉辉</div>
-        <div class="sm">机械工程师 · 智能制造 · HTML/CSS/JS</div>
-      </div>
-    </div>
-  </footer>
+  <div id="modal" class="modal hidden"><div class="modal-card"><button class="close">×</button><h3 id="modalTitle"></h3><p id="modalBody"></p></div></div>
 
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn">×</span>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDetail"></p>
-    </div>
-  </div>
+  <div id="toast" class="toast hidden">Sent (demo)</div>
 
   <script src="script.js"></script>
 </body>
