@@ -1,4 +1,3 @@
-
 /* PARTICLES CANVAS */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
@@ -125,3 +124,96 @@ function showToast(msg){
   t.textContent = msg; t.classList.remove('hidden');
   setTimeout(()=>t.classList.add('hidden'),2000);
 }
+
+/* --- New interactions: About awards toggle, GPA animate, Skills collapse + progress --- */
+
+/* Awards toggle with neon glow */
+document.querySelectorAll('.toggle-awards').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const list = btn.nextElementSibling;
+    if(!list) return;
+    list.classList.toggle('open');
+    // small glow effect on toggle
+    if(list.classList.contains('open')){
+      list.style.boxShadow = '0 30px 80px rgba(124,77,255,0.08)';
+      setTimeout(()=>list.style.boxShadow = '', 600);
+      btn.querySelector('.chev') && (btn.querySelector('.chev').textContent = '▴');
+    } else {
+      btn.querySelector('.chev') && (btn.querySelector('.chev').textContent = '▾');
+    }
+  });
+});
+
+/* GPA numeric animation when stats section enters view */
+const gpaEl = document.getElementById('gpa-number');
+if(gpaEl){
+  const gpaObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const target = parseFloat(gpaEl.textContent) || 3.95;
+        let cur = 0;
+        const steps = 80;
+        const inc = target/steps;
+        function tick(){
+          cur += inc;
+          if(cur < target){
+            gpaEl.textContent = (Math.round(cur*100)/100).toFixed(2);
+            requestAnimationFrame(tick);
+          } else {
+            gpaEl.textContent = target.toFixed(2);
+          }
+        }
+        tick();
+        gpaObserver.unobserve(gpaEl);
+      }
+    });
+  }, {threshold:0.2});
+  gpaObserver.observe(gpaEl);
+}
+
+/* Skill groups collapse and progress animation */
+document.querySelectorAll('.skill-title').forEach(title=>{
+  title.addEventListener('click', ()=>{
+    const list = title.nextElementSibling;
+    if(!list) return;
+    list.classList.toggle('open');
+    // rotate chevron visual by toggling class on title
+    const chev = title.querySelector('.chev');
+    if(list.classList.contains('open')){
+      chev && (chev.textContent = '▴');
+      // trigger progress fill for this group's lis
+      list.querySelectorAll('li').forEach(li=>{
+        const fill = li.querySelector('.skill-fill');
+        const lvl = parseInt(li.getAttribute('data-level')||0,10);
+        // ensure small delay for staggered fill
+        setTimeout(()=>{ li.classList.add('show'); fill.style.width = lvl + '%'; }, 120);
+      });
+    } else {
+      chev && (chev.textContent = '▾');
+      // collapse: reset fills
+      list.querySelectorAll('li').forEach(li=>{
+        const fill = li.querySelector('.skill-fill');
+        li.classList.remove('show');
+        fill.style.width = '0%';
+      });
+    }
+  });
+});
+
+/* Also animate fills when group scrolls into view (if already open, will trigger) */
+const skillObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const list = entry.target.querySelector('.skill-list');
+      if(list && list.classList.contains('open')){
+        list.querySelectorAll('li').forEach((li,i)=>{
+          const fill = li.querySelector('.skill-fill');
+          const lvl = parseInt(li.getAttribute('data-level')||0,10);
+          setTimeout(()=>{ li.classList.add('show'); fill.style.width = lvl + '%'; }, 120*i);
+        });
+      }
+      skillObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+document.querySelectorAll('.skill-group').forEach(g=>skillObserver.observe(g));

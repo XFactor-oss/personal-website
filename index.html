@@ -1,38 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Interactive Engineering Space</title>
+  <title>徐嘉辉 — 智能制造工程空间</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Particle canvas -->
   <canvas id="bgCanvas" class="bg-canvas"></canvas>
 
-  <!-- Top bar (minimal, no name/title per request) -->
   <header class="topbar">
     <nav class="nav container">
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#stats">Stats</a>
-      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link" href="#about">关于我</a>
+      <a class="nav-link" href="#skills">技能矩阵</a>
+      <a class="nav-link" href="#projects">项目案例</a>
+      <a class="nav-link" href="#contact">联系我</a>
     </nav>
   </header>
 
   <main class="container main-stage">
     <section class="hero neon-hero">
       <div class="hero-left">
-        <h1 id="mainTitle" class="neon-title">Welcome to My Interactive Engineering Space</h1>
+        <h1 class="neon-title">徐嘉辉</h1>
         <div class="typing" id="typing"></div>
-        <p class="sub">Design · Simulation · AI · Robotics</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn neon">Explore Projects</a>
-          <a href="#contact" class="btn outline">Get in Touch</a>
-        </div>
+        <p class="sub">华侨大学智能制造工程专业在读，专注于机械结构设计、工业机器人编程、轻量化优化与AI建模。热爱动手实践，致力于将工程设计与智能控制相结合，为工业智能化贡献力量。</p>
       </div>
       <div class="hero-right">
         <div class="avatar-glow">
-          <img src="./images/photo.jpg" alt="avatar" class="avatar" onerror="this.style.opacity=0.6;this.style.background='#222'">
+          <img src="./images/photo.jpg" alt="徐嘉辉" class="avatar">
           <div class="halo"></div>
         </div>
       </div>
@@ -40,46 +35,109 @@
 
     <section id="stats" class="stats-section">
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-number" data-target="15">0</div><p>Projects</p></div>
-        <div class="stat-card"><div class="stat-number" data-target="8">0</div><p>Awards</p></div>
-        <div class="stat-card"><div class="stat-number" data-target="3.95">0</div><p>GPA</p></div>
-        <div class="stat-card"><div class="stat-number" data-target="4">0</div><p>Team Leads</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="9">0</div><p>完成项目数量</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="7">0</div><p>获得奖项</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="3.95">0</div><p>平均绩点（GPA）</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="4">0</div><p>团队领导经历</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="projects-section">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-content">
+        <p>华侨大学 / 智能制造工程专业（本科，2022.09–2026.06）</p>
+        <p>GPA：<span id="gpa-number">3.95</span> / 专业前15%</p>
+        <p>主修课程：智能制造技术基础、制造系统建模与仿真、控制工程基础、机器视觉技术与应用、计算机智能控制系统。</p>
+        <h3 class="section-subtitle toggle-awards">荣誉奖项 <span class="chev">▾</span></h3>
+        <ul class="award-list">
+          <li>2023年第16届“三菱电机杯”全国大学生电气及自动化大赛南部赛区二等奖（第二作者）</li>
+          <li>华侨大学2022年“科飞工程杯”校一等奖（第一作者）</li>
+          <li>本科生国家励志奖学金（2022–2023、2024–2025学年）</li>
+          <li>2024暑期社会实践“先进个人”称号</li>
+          <li>2024中国大学生方程式汽车大赛 全国二等奖（考核第一）</li>
+          <li>2025中国大学生工程实践与创新能力大赛 全国二等奖（第一作者）</li>
+          <li>发明专利（在审）：《一种基于ECU控制的电机驱动式全自动序列换挡系统》（第一作者）</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="projects-section">
+      <h2 class="section-title">技能矩阵</h2>
+      <div class="skills-content">
+        <div class="skill-group">
+          <h3 class="skill-title">机械设计与仿真 <span class="chev">▾</span></h3>
+          <ul class="skill-list">
+            <li data-level="90"><span class="skill-name">AutoCAD</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="85"><span class="skill-name">Unigraphics NX</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="80"><span class="skill-name">Creo</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="75"><span class="skill-name">Altair Inspire</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-title">控制与编程 <span class="chev">▾</span></h3>
+          <ul class="skill-list">
+            <li data-level="80"><span class="skill-name">Arduino</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="75"><span class="skill-name">Keil uVision5</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="70"><span class="skill-name">Matlab</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="60"><span class="skill-name">EPLAN</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="70"><span class="skill-name">STM32</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-title">机器人与AI <span class="chev">▾</span></h3>
+          <ul class="skill-list">
+            <li data-level="75"><span class="skill-name">RobotStudio</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="80"><span class="skill-name">YOLOv5</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="65"><span class="skill-name">MaixCAM</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+            <li data-level="85"><span class="skill-name">AI Studio</span><span class="skill-bar"><span class="skill-fill"></span></span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
-      <h2 class="section-title">Selected Projects</h2>
+      <h2 class="section-title">项目案例</h2>
       <div class="projects-grid">
-        <article class="project" data-detail="Responsible for ECU/electrical system and paddle-shift design.">
-          <img src="./images/project1.jpg" alt="project1" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
-          <div class="project-info"><h3>Formula Racing</h3><p>ECU · paddle-shift · Controls</p></div>
+        <article class="project" data-year="2022.10–2024.11" data-detail="负责电控系统设计与优化，完成EPLAN线束建模、发动机调试与拨片换挡系统开发，年度考核第一。">
+          <img src="./images/project1.jpg" alt="方程式汽车" class="project-img">
+          <div class="project-info"><span class="year-tag">2024</span><h3>中国大学生方程式汽车大赛（FSC）</h3><p>电控系统设计与优化</p></div>
         </article>
-        <article class="project" data-detail="Automatic fish cleaning system with vision control.">
-          <img src="./images/project2.jpg" alt="project2" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
-          <div class="project-info"><h3>Auto Fish Cleaner</h3><p>Vision · Adaptive control</p></div>
+        <article class="project" data-year="2023.05–2025.09" data-detail="主导全自动鱼洗机与手提式韭菜收割器设计，结合视觉识别与齿轮机构实现自动化加工。">
+          <img src="./images/project2.jpg" alt="创新设计大赛" class="project-img">
+          <div class="project-info"><span class="year-tag">2025</span><h3>机械设计创新大赛</h3><p>视觉识别与自动化控制设计</p></div>
         </article>
-        <article class="project" data-detail="Topology optimization + AI modeling with Altair & AI Studio.">
-          <img src="./images/project3.jpg" alt="project3" class="project-img" onerror="this.style.opacity=0.6;this.style.background='#111'">
-          <div class="project-info"><h3>Lightweight & AI</h3><p>Topology optimization · Predictive models</p></div>
+        <article class="project" data-year="2025.04–2025.05" data-detail="利用Altair Inspire进行拓扑优化与仿真分析，结合AI Studio实现结构轻量化预测建模。">
+          <img src="./images/project3.jpg" alt="轻量化设计" class="project-img">
+          <div class="project-info"><span class="year-tag">2025</span><h3>成图大赛·轻量化赛道</h3><p>AI建模与拓扑优化</p></div>
+        </article>
+        <article class="project" data-year="2024.09–2025.08" data-detail="作为队长负责软硬件统筹，自制麦轮底盘与YOLOv5视觉识别系统，创新实现地图定位功能，获赛区最高分。">
+          <img src="./images/project4.jpg" alt="工程实践创新" class="project-img">
+          <div class="project-info"><span class="year-tag">2025</span><h3>中国大学生工程实践与创新能力大赛</h3><p>自主定位与AI识别系统</p></div>
         </article>
       </div>
     </section>
 
     <section id="contact" class="contact-section">
-      <h2 class="section-title">Contact</h2>
-      <form id="contactForm" class="neon-form" action="#" onsubmit="event.preventDefault();showToast('Message sent (demo)');this.reset();">
-        <div class="form-row"><input name="name" placeholder="Your name" required></div>
-        <div class="form-row"><input name="email" type="email" placeholder="your@email.com" required></div>
-        <div class="form-row"><textarea name="message" rows="4" placeholder="Message"></textarea></div>
-        <div class="form-row"><button class="btn neon" type="submit">Send Message</button></div>
+      <h2 class="section-title">联系我</h2>
+      <p>电话：172-6832-1180 ｜ 邮箱：2391370527@qq.com ｜ 意向城市：福州 / 厦门</p>
+      <form id="contactForm" class="neon-form" onsubmit="event.preventDefault();showToast('已发送（演示）');this.reset();">
+        <div class="form-row"><input name="name" placeholder="姓名" required></div>
+        <div class="form-row"><input name="email" type="email" placeholder="邮箱" required></div>
+        <div class="form-row"><textarea name="message" rows="4" placeholder="留言"></textarea></div>
+        <div class="form-row"><button class="btn neon" type="submit">发送</button></div>
       </form>
     </section>
   </main>
 
-  <div id="modal" class="modal hidden"><div class="modal-card"><button class="close">×</button><h3 id="modalTitle"></h3><p id="modalBody"></p></div></div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close">×</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalBody"></p>
+    </div>
+  </div>
 
-  <div id="toast" class="toast hidden">Sent (demo)</div>
-
+  <div id="toast" class="toast hidden">已发送</div>
   <script src="script.js"></script>
 </body>
 </html>
